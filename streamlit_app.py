@@ -58,7 +58,7 @@ def load_model():
     json_file.close()
     loaded_model = model_from_json(loaded_model_json)
     # load weights into new model
-    loaded_model.load_weights("/Users/apple/Desktop/software project /Trained_Models/karan.h5")
+    loaded_model.load_weights("/Users/apple/Desktop/software project /Trained_Models")
     print("Loaded model from disk")
     return loaded_model
 
@@ -66,7 +66,8 @@ def load_and_predict(audio_file, model):
     """Load audio, preprocess, and predict emotion."""
     # Load and preprocess the audio
     sampling_rate = 44100  # Adjust as needed
-    features = get_audio_features(audio_file, sampling_rate)
+    features = np.array(get_audio_features(audio_file, sampling_rate))  # Convert to NumPy array
+    features = np.expand_dims(features, axis=0)  # Add batch dimension
     # Predict emotion
     emotion = model.predict(features)
     return emotion
