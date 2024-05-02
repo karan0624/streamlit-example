@@ -1,9 +1,0 @@
-altair
-pandas
-streamlit
-audio-recroder-streamlit
-librosa
-keras.models 
-jason
-scipy.io.wavfile
-tempfile
