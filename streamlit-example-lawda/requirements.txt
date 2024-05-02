@@ -1,8 +1,0 @@
-streamlit
-numpy
-pandas
-scipy
-librosa==0.9
-resampy
-tensorflow==2.15.1
-streamlit-audiorec
